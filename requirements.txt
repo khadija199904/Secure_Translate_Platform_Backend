@@ -5,3 +5,5 @@ pydantic
 fastapi
 uvicorn
 requests
+python-jose[cryptography]
+passlib[argon2]
