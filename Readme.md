@@ -15,21 +15,41 @@ Ce projet est une application complète comprenant une API Backend (FastAPI), un
 ---
 
 ## Architecture
-L'application est composée de trois services orchestrés par Docker :
 
-1.**Frontend** (React.js) : Interface utilisateur pour le login/Registre et la traduction.
-2.**Backend** (FastAPI) : API REST qui gère la logique métier, la sécurité et les appels externes.
-3.**Base de Données** (PostgreSQL) : Stockage persistant des utilisateurs et de leurs mots de passe hachés.
+L'application **Secure Translate Platform** est composée de trois services principaux, orchestrés par **Docker** :
 
+1. **Frontend (React.js)**  
+   - Interface utilisateur pour la connexion, l'inscription et la traduction.
+   - Gestion des formulaires et de l’affichage des résultats.
 
-### Workflow d'Authentification & Traduction**
-1.Login : L'utilisateur envoie ses identifiants (username, password).
-2.JWT : Le backend vérifie le hash dans PostgreSQL et renvoie un access_token.
-3.Requête Protégée : L'utilisateur appelle /translate avec le header TOKEN.
-4.Traduction :
-    - Le backend valide le token.
-    - Il appelle l'API Hugging Face.
-    - Il retourne la traduction JSON.
+2. **Backend (FastAPI)**  
+   - API REST qui gère la logique métier et la sécurité (JWT).
+   - Communication avec les services externes (Hugging Face API).
+
+3. **Base de Données (PostgreSQL)**  
+   - Stockage persistant des utilisateurs et de leurs mots de passe hachés.
+   - Gestion des données pour l’authentification et les logs d’activité.
+
+---
+
+#  Workflow d'Authentification & Traduction
+
+1. **Login**  
+   L'utilisateur saisit ses identifiants (`username` et `password`) dans le formulaire de connexion.
+
+2. **JWT**  
+   - Le backend vérifie le mot de passe haché dans PostgreSQL.  
+   - Un **access_token JWT** est généré et renvoyé au frontend.
+
+3. **Requête Protégée**  
+   - L’utilisateur envoie une requête à `/translate` avec le **header TOKEN**.  
+   - Le backend valide le token pour autoriser l’accès.
+
+4. **Traduction**  
+   - Le backend appelle l’API Hugging Face avec le texte à traduire.  
+   - La réponse JSON contenant la traduction est renvoyée au frontend.
+
+---
 
 ## Prérequis
 - Docker et Docker Compose installés sur votre machine.
