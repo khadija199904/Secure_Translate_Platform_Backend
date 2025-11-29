@@ -162,7 +162,7 @@ Modèles : Nous utilisons Helsinki-NLP/opus-mt-fr-en et en-fr pour de meilleures
 #### Requêtes protégées
 **Objectif :** Vérifier l’accès aux endpoints protégés avec un JWT valide.
 
-![Résultat Traduction](/images/translate-200.png)
+![Résultat Traduction](/images/Translate-200.png)
 
 #### Cas d’erreur
 **Objectif :** JWT manquant
