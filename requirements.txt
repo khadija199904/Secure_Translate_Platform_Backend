@@ -1,0 +1,11 @@
+dotenv
+SQLalchemy
+psycopg2-binary
+pydantic 
+fastapi
+uvicorn
+requests
+python-jose[cryptography]
+passlib[argon2]
+pytest
+httpx
