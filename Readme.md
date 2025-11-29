@@ -179,7 +179,7 @@ python -m pytest -v
 
 ## Structure des fichiers
 ```bash
-backend/
+Secure_Translate_Platform_Backend/
 ├── api_app/
 │   ├── __init__.py  
 │   ├── main.py                  # Point d'entrée & Routes
