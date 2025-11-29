@@ -25,6 +25,8 @@ L'application est composée de trois services orchestrés par Docker :
 
 ```mermaid
 graph TD
+
+
     subgraph "Docker Network"
         direction TB
         API[Backend FastAPI]
